@@ -49,8 +49,7 @@ void mouseClicked()
 
 void draw() 
 {
-   lights();
-   background(0);  // the background image of a planet seen from the Illusive mans room in Mass Effect 2
+   image(bg,0 ,0 ,width,height);  // the background image of a planet seen from the Illusive mans room in Mass Effect 2
    fill(232,56,7,40);
    /*rect(0,0,1920,1080);*/ // a light filter that covers the whole screen adding to the orange theme
    stroke(247,159,25,150);
