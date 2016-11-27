@@ -5,6 +5,15 @@ Minim minim;
 AudioPlayer theme;
 AudioPlayer click;
 
+//Rotating Arc Variables
+int xCo = 960; //x coordinates
+int yCo = 540; //y coordinates
+int lar = 300; //width
+int alt = 300; // height
+int ang = 1; // angle to start
+int ang2 = 1;
+int ang3 = 1;
+
 void setup() 
 {
   size(1920,1080);
@@ -46,4 +55,36 @@ void draw()
    vertex(1490,880);
    vertex(1540,1080);
    endShape(CLOSE); 
+   
+   //Rotating Arcs
+   stroke(255,174,23,150);
+   strokeWeight(10);
+   smooth();
+   noFill();
+    
+   ang += 1;
+   ang2 += 2;
+   ang3 += 3;
+  
+   arc(xCo,yCo,lar,alt, radians(ang), radians(ang+300));
+   arc(xCo,yCo,lar+30,alt+30, radians(-ang2), radians(-ang2+150));
+   arc(xCo,yCo,lar+60,alt+60, radians(ang3), radians(ang3+200));
+   arc(xCo,yCo,lar+200,alt+200, radians(-ang2), radians(-ang2+300));
+   arc(xCo,yCo,lar+220,alt+220, radians(ang), radians(ang+100));
+   arc(xCo,yCo,lar+250,alt+250, radians(-ang3), radians(-ang3+300));
+   arc(xCo,yCo,lar+500,alt+500, radians(ang), radians(ang+150));
+   arc(xCo,yCo,lar+510,alt+510, radians(-ang2), radians(-ang2+200));
+   
+   menuButtons();
+   
+}
+
+void menuButtons()
+{
+  fill(255,174,23,220);
+  rect(760,160,400,200);
+  rect(550,375,400,200);
+  rect(970,375,400,200);
+  rect(760,590,400,200);
+
 }
