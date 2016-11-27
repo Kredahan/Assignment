@@ -13,6 +13,7 @@ int alt = 300; // height
 int ang = 1; // angle to start
 int ang2 = 1;
 int ang3 = 1;
+boolean menu = true;
 
 void setup() 
 {
@@ -81,10 +82,14 @@ void draw()
 
 void menuButtons()
 {
-  fill(255,174,23,220);
-  rect(760,160,400,200);
-  rect(550,375,400,200);
-  rect(970,375,400,200);
-  rect(760,590,400,200);
-
+  buttonInit();
+  
+  if(menu == true)
+  {
+    fill(255,174,23,220);
+    rect(button1[0],button1[1],button1[2],button1[3]);        
+    rect(button2[0],button2[1],button2[2],button2[3]);
+    rect(button3[0],button3[1],button3[2],button3[3]);
+    rect(button4[0],button4[1],button4[2],button4[3]);
+  }
 }
