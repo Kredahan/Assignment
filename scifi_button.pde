@@ -3,6 +3,11 @@ int[] button2 = new int[5];
 int[] button3 = new int[5];
 int[] button4 = new int[5];
 
+color button1col = color( 247,159,25,120);
+color button2col = color( 247,159,25,120);
+color button3col = color( 247,159,25,120);
+color button4col = color( 247,159,25,120);
+
 void buttonInit()
 {
   button1[0] = 760; //x-coordinate of first button

@@ -1,3 +1,4 @@
+import processing.opengl.*; 
 import ddf.minim.*;
 PImage bg;
 
@@ -13,13 +14,9 @@ int alt = 300; // height
 int ang = 1; // angle to start
 int ang2 = 1;
 int ang3 = 1;
+
 boolean menu = true;
 boolean planetinfo = false;
-
-color button1col = color( 247,159,25,120);
-color button2col = color( 247,159,25,120);
-color button3col = color( 247,159,25,120);
-color button4col = color( 247,159,25,120);
 
 String planettitle = "Planet Report";
 String armory = "Armory";
@@ -28,13 +25,21 @@ String  exit = "Exit";
 
 void setup() 
 {
-  size(1920,1080);
+  size(1920,1080, P3D);
   bg = loadImage("illusive.jpg");
+  smooth();
   
   minim = new Minim(this); //Looping the theme to play while the program is running
   theme = minim.loadFile("Map.mp3");
   theme.loop();
   click = minim.loadFile("click.mp3");
+  
+   omega = loadImage("plutomap.jpg");
+   noveria = loadImage("jupitermap.jpg");
+   globe = createShape(SPHERE, 150);
+   globe2 = createShape(SPHERE, 40);
+   globe.setTexture(omega);
+   globe2.setTexture(noveria);
 }
 
 void mouseClicked()
@@ -44,9 +49,10 @@ void mouseClicked()
 
 void draw() 
 {
-   background(bg);  
-      fill(232,56,7,40);
-   rect(0,0,1920,1080);
+   lights();
+   background(0);  // the background image of a planet seen from the Illusive mans room in Mass Effect 2
+   fill(232,56,7,40);
+   /*rect(0,0,1920,1080);*/ // a light filter that covers the whole screen adding to the orange theme
    stroke(247,159,25,150);
    noFill();
    strokeWeight(3);
@@ -56,7 +62,7 @@ void draw()
    strokeWeight(40);
    ellipse(960,540,width -1000,width - 1000);
    
-   fill(247,159,25,100);
+   fill(247,159,25,100); //Bottom Border
    stroke(255,238,78,80);
    strokeWeight(20);
    beginShape();
@@ -71,7 +77,6 @@ void draw()
    //Rotating Arcs
    stroke(255,174,23,150);
    strokeWeight(10);
-   smooth();
    noFill();
     
    ang += 1;
@@ -88,6 +93,14 @@ void draw()
    arc(xCo,yCo,lar+510,alt+510, radians(-ang2), radians(-ang2+200));
    
    menuButtons();
+   
+   if(planetinfo == true)
+   {
+     noStroke();
+      orbit(); 
+   }
+   
+
    
 }
 
@@ -133,6 +146,13 @@ void menuButtons()
     {
       button1[4] = 1;
       button1col = color(255,174,23,220);
+      
+      if(mousePressed)
+      {
+        menu = false;
+        planetinfo = true;
+      }
+     
     }
     else
     {
