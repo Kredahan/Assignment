@@ -14,11 +14,17 @@ int ang = 1; // angle to start
 int ang2 = 1;
 int ang3 = 1;
 boolean menu = true;
+boolean planetinfo = false;
 
-color button1col = color( 247,159,25,100);
-color button2col = color( 247,159,25,100);
-color button3col = color( 247,159,25,100);
-color button4col = color( 247,159,25,100);
+color button1col = color( 247,159,25,120);
+color button2col = color( 247,159,25,120);
+color button3col = color( 247,159,25,120);
+color button4col = color( 247,159,25,120);
+
+String planettitle = "Planet Report";
+String armory = "Armory";
+String ship = "Ship Diagnostics";
+String  exit = "Exit";
 
 void setup() 
 {
@@ -97,18 +103,33 @@ void menuButtons()
    
     fill(button1col);
     rect(button1[0],button1[1],button1[2],button1[3]);
+    fill(0,0,0,200);
+    text(planettitle, 835, 270);
+    textSize(40);
 
 
     fill(button2col);
     rect(button2[0],button2[1],button2[2],button2[3]);
+    fill(0,0,0,200);
+    text(armory, 680, 480);
+    textSize(40);
+
     
     fill(button3col);
-    rect(button3[0],button3[1],button3[2],button3[3]);        
+    rect(button3[0],button3[1],button3[2],button3[3]);
+    fill(0,0,0,200);
+    text(ship, 1010, 480);
+    textSize(40);
+
     
     fill(button4col);
     rect(button4[0],button4[1],button4[2],button4[3]);
+    fill(0,0,0,200);
+    text(exit, 920, 700);
+    textSize(40);
+
     
-    if(mouseY <= (button1[1] + button1[3]) && mouseY >= (button1[1]) && mouseX <= (button1[0] + button1[2]) && mouseX >= (button1[0]))
+    if(mouseY <= (button1[1] + button1[3]) && mouseY >= (button1[1]) && mouseX <= (button1[0] + button1[2]) && mouseX >= (button1[0])) //Planet Button
     {
       button1[4] = 1;
       button1col = color(255,174,23,220);
@@ -118,7 +139,7 @@ void menuButtons()
       button1col = color( 247,159,25,100);
     }
     
-    if(mouseY <= button2[1] + button2[3] && mouseY >= button2[1] && mouseX <= button2[0] + button2[2] && mouseX >= button2[0])
+    if(mouseY <= button2[1] + button2[3] && mouseY >= button2[1] && mouseX <= button2[0] + button2[2] && mouseX >= button2[0]) //Armory Button
     {
       button2[4] = 1;
       button2col = color(255,174,23,220);
@@ -128,7 +149,7 @@ void menuButtons()
       button2col = color( 247,159,25,100);
     }
     
-    if(mouseY <= button3[1] + button3[3] && mouseY >= button3[1] && mouseX <= button3[0] + button3[2] && mouseX >= button3[0])
+    if(mouseY <= button3[1] + button3[3] && mouseY >= button3[1] && mouseX <= button3[0] + button3[2] && mouseX >= button3[0]) //Ship Button
     {
       button3[4] = 1;
       button3col = color(255,174,23,220);
@@ -139,7 +160,7 @@ void menuButtons()
       button3col = color( 247,159,25,100);
     }
     
-    if(mouseY <= button4[1] + button4[3] && mouseY >= button4[1] && mouseX <= button4[0] + button4[2] && mouseX >= button4[0])
+    if(mouseY <= button4[1] + button4[3] && mouseY >= button4[1] && mouseX <= button4[0] + button4[2] && mouseX >= button4[0]) //Exit Button
     {
       button4[4] = 1;
       button4col = color(255,174,23,220);
