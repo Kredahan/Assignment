@@ -1,5 +1,4 @@
 import ddf.minim.*;
-import processing.opengl.*;
 PImage bg;
 
 Minim minim;
