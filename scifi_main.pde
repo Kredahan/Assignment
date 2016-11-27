@@ -51,7 +51,8 @@ void draw()
 {
    image(bg,0 ,0 ,width,height);  // the background image of a planet seen from the Illusive mans room in Mass Effect 2
    fill(232,56,7,40);
-   /*rect(0,0,1920,1080);*/ // a light filter that covers the whole screen adding to the orange theme
+   /*rect(0,0,1920,1080);*/
+   lights();// a light filter that covers the whole screen adding to the orange theme
    stroke(247,159,25,150);
    noFill();
    strokeWeight(3);
@@ -74,7 +75,7 @@ void draw()
    endShape(CLOSE); 
    
    //Rotating Arcs
-   stroke(255,174,23,150);
+   stroke(255,174,23,120);
    strokeWeight(10);
    noFill();
     
@@ -95,8 +96,13 @@ void draw()
    
    if(planetinfo == true)
    {
+     fill(64,8,23,200);
+     ellipse(width/2,height/2,600,600);
      noStroke();
+     noFill();
       orbit(); 
+      fill(137,10,44,180);
+      rect(width-450,height/8,350,700);
    }
    
 

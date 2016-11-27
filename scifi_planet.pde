@@ -8,14 +8,13 @@ PShape globe2;
 void orbit()
 {
   inc+=0.02;
-  stroke(255, 207, 27);
   pushMatrix();
   translate(width/2,height/2, 0);
   rotateY(inc);
   rotateX(inc);
   noStroke();
   shape(globe);
-  translate(150,20,0);
+  translate(200,20,0);
   rotateY(inc);
   rotateX(inc);
   shape(globe2);
