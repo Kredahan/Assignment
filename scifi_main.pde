@@ -15,6 +15,11 @@ int ang2 = 1;
 int ang3 = 1;
 boolean menu = true;
 
+color button1col = color( 247,159,25,100);
+color button2col = color( 247,159,25,100);
+color button3col = color( 247,159,25,100);
+color button4col = color( 247,159,25,100);
+
 void setup() 
 {
   size(1920,1080);
@@ -86,10 +91,64 @@ void menuButtons()
   
   if(menu == true)
   {
-    fill(255,174,23,220);
-    rect(button1[0],button1[1],button1[2],button1[3]);        
+    
+    stroke(0,0,0, 120);
+    strokeWeight(5);
+   
+    fill(button1col);
+    rect(button1[0],button1[1],button1[2],button1[3]);
+
+
+    fill(button2col);
     rect(button2[0],button2[1],button2[2],button2[3]);
-    rect(button3[0],button3[1],button3[2],button3[3]);
+    
+    fill(button3col);
+    rect(button3[0],button3[1],button3[2],button3[3]);        
+    
+    fill(button4col);
     rect(button4[0],button4[1],button4[2],button4[3]);
+    
+    if(mouseY <= (button1[1] + button1[3]) && mouseY >= (button1[1]) && mouseX <= (button1[0] + button1[2]) && mouseX >= (button1[0]))
+    {
+      button1[4] = 1;
+      button1col = color(255,174,23,220);
+    }
+    else
+    {
+      button1col = color( 247,159,25,100);
+    }
+    
+    if(mouseY <= button2[1] + button2[3] && mouseY >= button2[1] && mouseX <= button2[0] + button2[2] && mouseX >= button2[0])
+    {
+      button2[4] = 1;
+      button2col = color(255,174,23,220);
+    }
+    else
+    {
+      button2col = color( 247,159,25,100);
+    }
+    
+    if(mouseY <= button3[1] + button3[3] && mouseY >= button3[1] && mouseX <= button3[0] + button3[2] && mouseX >= button3[0])
+    {
+      button3[4] = 1;
+      button3col = color(255,174,23,220);
+
+    }
+    else
+    {
+      button3col = color( 247,159,25,100);
+    }
+    
+    if(mouseY <= button4[1] + button4[3] && mouseY >= button4[1] && mouseX <= button4[0] + button4[2] && mouseX >= button4[0])
+    {
+      button4[4] = 1;
+      button4col = color(255,174,23,220);
+
+    }
+    else
+    {
+      button4col = color( 247,159,25,100);
+    }
   }
+  
 }

@@ -23,9 +23,9 @@ void buttonInit()
   button3[3] = 200; 
   button3[4] = 0; 
 
-  button2[0] = 760; //fourth button
-  button2[1] = 590; 
-  button2[2] = 400;
-  button2[3] = 200; 
-  button2[4] = 0;  
+  button4[0] = 760; //fourth button
+  button4[1] = 590; 
+  button4[2] = 400;
+  button4[3] = 200; 
+  button4[4] = 0;  
 }
