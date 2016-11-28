@@ -22,3 +22,55 @@ void orbit()
   shape(globe2);
   popMatrix();
 }
+
+void planetdisplay()
+{
+   if(planetinfo == true)
+   {
+     fill(64,8,23,200);
+     ellipse(width/2,height/2,600,600);
+     noStroke();
+     noFill();
+     
+     orbit(); 
+     fill(137,10,44,200);
+    
+     strokeWeight(1);
+     stroke(0,0,0,180);
+     rect(width-454,height/8,350,700);
+     fill(255);
+     textSize(25);
+     text(omegaplanet,width-450,height/8,350,700);
+     
+     stroke(0,0,0, 120);
+     strokeWeight(5);
+   
+     fill(backbuttoncol);
+     rect(backbutton[0],backbutton[1],backbutton[2],backbutton[3]);
+     fill(0,0,0,200);
+     textSize(40);
+     text(back, 150, 965);
+     
+     if(mouseY <= (backbutton[1] + backbutton[3]) && mouseY >= (backbutton[1]) && mouseX <= (backbutton[0] + backbutton[2]) && mouseX >= (backbutton[0])) //Planet Button
+    {
+      backbutton[4] = 1;
+      backbuttoncol = color(255,174,23,220);
+      
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        menu = true;
+        planetinfo = false;
+      }
+     
+     
+    }
+    else
+    {
+      backbuttoncol = color( 247,159,25,100);
+    }
+       
+    
+  }
+}

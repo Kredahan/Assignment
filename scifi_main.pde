@@ -2,6 +2,8 @@ import processing.opengl.*;
 import ddf.minim.*;
 PImage bg;
 PImage hologram;
+PImage omni;
+PImage chestplate;
 
 Minim minim;
 AudioPlayer theme;
@@ -31,6 +33,8 @@ void setup()
   size(1920,1080, P3D);
   bg = loadImage("illusive.jpg");
   hologram = loadImage("hologram.png");
+  omni = loadImage("leftglove.png");
+  chestplate = loadImage("chest.png");
   smooth();
   
   minim = new Minim(this); //Looping the theme to play while the program is running
@@ -48,7 +52,14 @@ void setup()
 
 void draw() 
 {
-   image(bg,0 ,0 ,width,height);  // the background image of a planet seen from the Illusive mans room in Mass Effect 2
+   image(bg,0 ,0 ,width,height);// the background image of a planet seen from the Illusive mans room in Mass Effect 2
+   
+   menuButtons();
+   //Planet Information and 3D Orbiting
+   planetdisplay();
+   //Armor and Equipment Selection
+   armorydisplay();
+   
    fill(232,56,7,40);
    /*rect(0,0,1920,1080);*/
    lights();// a light filter that covers the whole screen adding to the orange theme
@@ -91,72 +102,6 @@ void draw()
    arc(xCo,yCo,wid+500,high+500, radians(ang), radians(ang+150));
    arc(xCo,yCo,wid+510,high+510, radians(-ang2), radians(-ang2+200));
    
-   menuButtons();
-   
-   //Planet Information and 3D Orbiting
-   if(planetinfo == true)
-   {
-     fill(64,8,23,200);
-     ellipse(width/2,height/2,600,600);
-     noStroke();
-     noFill();
-     
-     orbit(); 
-     fill(137,10,44,200);
-    
-     strokeWeight(1);
-     stroke(0,0,0,180);
-     rect(width-454,height/8,350,700);
-     fill(255);
-     textSize(25);
-     text(omegaplanet,width-450,height/8,350,700);
-     
-     stroke(0,0,0, 120);
-     strokeWeight(5);
-   
-     fill(backbuttoncol);
-     rect(backbutton[0],backbutton[1],backbutton[2],backbutton[3]);
-     fill(0,0,0,200);
-     textSize(40);
-     text(back, 150, 965);
-     
-     if(mouseY <= (backbutton[1] + backbutton[3]) && mouseY >= (backbutton[1]) && mouseX <= (backbutton[0] + backbutton[2]) && mouseX >= (backbutton[0])) //Planet Button
-    {
-      backbutton[4] = 1;
-      backbuttoncol = color(255,174,23,220);
-      
-      if(mousePressed)
-      {
-        click.play();
-        click.rewind();
-        menu = true;
-        planetinfo = false;
-      }
-     
-     
-    }
-    else
-    {
-      backbuttoncol = color( 247,159,25,100);
-    }
-       
-    
-  }
-  
-  
-  if(armoryscreen == true) //Armory Screen
-  {
-      strokeWeight(3);
-      stroke(0,0,0,180);
-      fill(64,8,23,210);
-      rect(710,100,500,700);
-      image(hologram,820,200);
-      
-      
-    
-    
-    
-  } 
   
 
 }
