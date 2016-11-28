@@ -189,6 +189,11 @@ void armorydisplay()
       {
         click.play();
         click.rewind();
+        cheston = false;
+        glove1on = false;
+        glove2on = false;
+        legson = false;
+        helmeton = false;
         menu = true;
         armoryscreen = false;
       } // end inner if

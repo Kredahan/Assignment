@@ -23,6 +23,7 @@ int ang3 = 1;
 boolean menu = true;
 boolean planetinfo = false;
 boolean armoryscreen = false;
+boolean shipdiag = false;
 
 String planettitle = "Planet Report";
 String armory = "Armory";
@@ -209,6 +210,14 @@ void menuButtons()
     {
       button4[4] = 1;
       button4col = color(255,174,23,220);
+      
+        if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        menu = false;
+        shipdiag = true;
+      }
 
     }
     else
