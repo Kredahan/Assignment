@@ -11,12 +11,12 @@ void orbit()
 {
   inc+=0.02;
   pushMatrix();
-  translate(width/2,height/2, 0);
+  translate(width/2,height/2, 200);
   rotateY(inc);
   rotateX(inc);
   noStroke();
   shape(globe);
-  translate(200,20,0);
+  translate(200,20,150);
   rotateY(inc);
   rotateX(inc);
   shape(globe2);

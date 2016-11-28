@@ -43,11 +43,6 @@ void setup()
    globe2.setTexture(noveria);
 }
 
-void mouseClicked()
-{
-    click.play();
-}
-
 void draw() 
 {
    image(bg,0 ,0 ,width,height);  // the background image of a planet seen from the Illusive mans room in Mass Effect 2
@@ -129,6 +124,8 @@ void draw()
       
       if(mousePressed)
       {
+        click.play();
+        click.rewind();
         menu = true;
         planetinfo = false;
       }
@@ -188,6 +185,8 @@ void menuButtons()
       
       if(mousePressed)
       {
+        click.play();
+        click.rewind();
         menu = false;
         planetinfo = true;
       }
