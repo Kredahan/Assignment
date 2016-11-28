@@ -37,10 +37,10 @@ void armorinit()
  glove2[3] = 50; 
  glove2[4] = 0; 
  
- legs[0] = 840; 
- legs[1] = 410; 
- legs[2] = 50; 
- legs[3] = 50; 
+ legs[0] = 905; 
+ legs[1] = 400; 
+ legs[2] = 100; 
+ legs[3] = 270; 
  legs[4] = 0; 
  
  helmet[0] = 930; 
@@ -70,10 +70,14 @@ void armorydisplay()
       rect(chest[0],chest[1],chest[2],chest[3]);
       fill(helmetcol);
       rect(helmet[0],helmet[1],helmet[2],helmet[3]);
+      fill(legscol);
+      rect(legs[0],legs[1],legs[2],legs[3]);
+      image(leg ,legs[0] - 25 ,legs[1] ,150, 300); 
+
       
      if(mouseY <= (glove1[1] + glove1[3]) && mouseY >= (glove1[1]) && mouseX <= (glove1[0] + glove1[2]) && mouseX >= (glove1[0])) //Left Glove Button
     {
-      glove1col = color(255,174,23,220);
+      glove1col = color(255,174,23,180);
       
       if(mousePressed)
       {
@@ -97,7 +101,7 @@ void armorydisplay()
     
     if(mouseY <= (chest[1] + chest[3]) && mouseY >= (chest[1]) && mouseX <= (chest[0] + chest[2]) && mouseX >= (chest[0])) //Chest Button
     {
-      chestcol = color(255,174,23,220);
+      chestcol = color(255,174,23,180);
       
       if(mousePressed)
       {
@@ -121,7 +125,7 @@ void armorydisplay()
     
     if(mouseY <= (helmet[1] + helmet[3]) && mouseY >= (helmet[1]) && mouseX <= (helmet[0] + helmet[2]) && mouseX >= (helmet[0])) //Helmet Button
     {
-      helmetcol = color(255,174,23,220);
+      helmetcol = color(255,174,23,180);
       
       if(mousePressed)
       {

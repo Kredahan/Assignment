@@ -5,6 +5,7 @@ PImage hologram;
 PImage omni;
 PImage chestplate;
 PImage helm;
+PImage leg;
 
 Minim minim;
 AudioPlayer theme;
@@ -37,6 +38,7 @@ void setup()
   omni = loadImage("leftglove.png");
   chestplate = loadImage("chest.png");
   helm = loadImage("helmet.png");
+  leg = loadImage("leg.png");
   smooth();
   
   minim = new Minim(this); //Looping the theme to play while the program is running
