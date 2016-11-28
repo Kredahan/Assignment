@@ -42,8 +42,8 @@ void armorinit()
  legs[3] = 50; 
  legs[4] = 0; 
  
- helmet[0] = 840; 
- helmet[1] = 410; 
+ helmet[0] = 930; 
+ helmet[1] = 210; 
  helmet[2] = 50; 
  helmet[3] = 50; 
  helmet[4] = 0; 
@@ -69,6 +69,8 @@ void armorydisplay()
       rect(glove1[0],glove1[1],glove1[2],glove1[3]); 
       fill(chestcol);
       rect(chest[0],chest[1],chest[2],chest[3]);
+      fill(helmetcol);
+      rect(helmet[0],helmet[1],helmet[2],helmet[3]);
       
      if(mouseY <= (glove1[1] + glove1[3]) && mouseY >= (glove1[1]) && mouseX <= (glove1[0] + glove1[2]) && mouseX >= (glove1[0])) //Left Glove Button
     {
@@ -94,7 +96,7 @@ void armorydisplay()
     }
     
     
-    if(mouseY <= (chest[1] + chest[3]) && mouseY >= (chest[1]) && mouseX <= (chest[0] + chest[2]) && mouseX >= (chest[0])) //Left Glove Button
+    if(mouseY <= (chest[1] + chest[3]) && mouseY >= (chest[1]) && mouseX <= (chest[0] + chest[2]) && mouseX >= (chest[0])) //Chest Button
     {
       chestcol = color(255,174,23,220);
       
@@ -117,7 +119,29 @@ void armorydisplay()
       image(chestplate,chest[0] - 220,chest[1] - 90,370,370);
     }
       
+    
+    if(mouseY <= (helmet[1] + helmet[3]) && mouseY >= (helmet[1]) && mouseX <= (helmet[0] + helmet[2]) && mouseX >= (helmet[0])) //Helmet Button
+    {
+      helmetcol = color(255,174,23,220);
       
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        helmeton = true;
+        
+      }
+     
+    }
+    else
+    {
+      helmetcol = color(64,8,23,20);
+    }
+    
+    if(helmeton == true)
+    {
+     image(helm,helmet[0] - 25 ,helmet[1] - 20 ,100, 100); 
+    }
       
   } 
   
