@@ -4,7 +4,7 @@ int[] glove2 = new int[5];
 int[] legs = new int[5];
 int[] helmet = new int[5];
 
-color glove1col = color( 64,8,23,20);
+color glove1col = color( 247,159,25,120);
 color glove2col = color( 247,159,25,120);
 color chestcol = color( 247,159,25,20);
 color legscol = color( 247,159,25,120);
@@ -22,7 +22,7 @@ void armorinit()
  chest[0] = 905; //x-coordinate of first button
  chest[1] = 270; // y-coordinate of first button
  chest[2] = 100; // width of first button
- chest[3] = 170; // height of first button
+ chest[3] = 120; // height of first button
  chest[4] = 0;  // whether of not the button is being hovered over by the mouse, set to 1 if the conditions are true
  
  glove1[0] = 840; 
@@ -72,7 +72,6 @@ void armorydisplay()
       rect(helmet[0],helmet[1],helmet[2],helmet[3]);
       fill(legscol);
       rect(legs[0],legs[1],legs[2],legs[3]);
-      image(leg ,legs[0] - 25 ,legs[1] ,150, 300); 
 
       
      if(mouseY <= (glove1[1] + glove1[3]) && mouseY >= (glove1[1]) && mouseX <= (glove1[0] + glove1[2]) && mouseX >= (glove1[0])) //Left Glove Button
@@ -119,7 +118,7 @@ void armorydisplay()
     
     if(cheston == true)
     {
-      image(chestplate,chest[0] - 220,chest[1] - 90,370,370);
+      image(chestplate,chest[0] - 220,chest[1] - 80,370,370);
     }
       
     
@@ -143,10 +142,36 @@ void armorydisplay()
     
     if(helmeton == true)
     {
-     image(helm,helmet[0] - 27 ,helmet[1] - 15 ,100, 75); 
+     image(helm,helmet[0] - 27 ,helmet[1] - 5 ,100, 75); 
     }
     
-      stroke(0,0,0, 120);
+    
+      if(mouseY <= (legs[1] + legs[3]) && mouseY >= (legs[1]) && mouseX <= (legs[0] + legs[2]) && mouseX >= (legs[0])) //Legs Button
+    {
+      legscol = color(255,174,23,180);
+      
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        legson = true;
+        
+      }
+     
+    }
+    else
+    {
+      legscol = color(64,8,23,20);
+    }
+    
+    if(legson == true)
+    {
+      image(leg ,legs[0] - 25 ,legs[1] ,150, 300); 
+    }
+    
+    
+     //back button code
+     stroke(0,0,0, 120);
      strokeWeight(5);
    
      fill(backbuttoncol);
