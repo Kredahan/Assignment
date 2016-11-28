@@ -209,6 +209,7 @@ void menuButtons()
         menu = false;
         shipdiag = true;
 
+      }
     }
     else
     {

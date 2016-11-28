@@ -15,7 +15,8 @@ boolean cheston = false;
 boolean glove1on = false;
 boolean glove2on = false;
 boolean legson = false;
-boolean helmeton = false;
+boolean helmeton = false; 
+
 
 void armorinit()
 {
@@ -180,7 +181,7 @@ void armorydisplay()
      textSize(40);
      text(back, 150, 965);
   
-   if(mouseY <= (backbutton[1] + backbutton[3]) && mouseY >= (backbutton[1]) && mouseX <= (backbutton[0] + backbutton[2]) && mouseX >= (backbutton[0])) //Planet Button
+   if(mouseY <= (backbutton[1] + backbutton[3]) && mouseY >= (backbutton[1]) && mouseX <= (backbutton[0] + backbutton[2]) && mouseX >= (backbutton[0])) //Back Button
     {
       backbutton[4] = 1;
       backbuttoncol = color(255,174,23,220);

@@ -17,7 +17,7 @@ void stars()
        {
          fill(255,255,255,random(20,255));
          ellipse(random(480,1440),random(270,810),random(1,5),random(1,5));
-       }//end for loop
+       }//end for loop 
      }//end inner if
  
      stroke(0,0,0, 120);
@@ -51,4 +51,4 @@ void stars()
      
   }//end if(shipdiag == true)
  
-}//end function stars()
+}//end function stars() 
