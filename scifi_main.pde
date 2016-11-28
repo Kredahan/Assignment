@@ -10,6 +10,7 @@ PImage leg;
 Minim minim;
 AudioPlayer theme;
 AudioPlayer click;
+AudioPlayer logout;
 
 //Rotating Arc Variables
 int xCo = 960; //x coordinates
@@ -24,6 +25,7 @@ boolean menu = true;
 boolean planetinfo = false;
 boolean armoryscreen = false;
 boolean shipdiag = false;
+boolean exitstate = false;
 
 String planettitle = "Planet Report";
 String armory = "Armory";
@@ -46,6 +48,7 @@ void setup()
   theme = minim.loadFile("Map.mp3");
   theme.loop();
   click = minim.loadFile("click.mp3");
+  logout = minim.loadFile("leave.mp3");
   
    omega = loadImage("plutomap.jpg");
    noveria = loadImage("jupitermap.jpg");
@@ -66,6 +69,8 @@ void draw()
    armorydisplay();
    //Ship Diagnostics and Space Simulator
    stars();
+   //exit function
+   quit();
    
    fill(232,56,7,40);
    /*rect(0,0,1920,1080);*/
@@ -223,8 +228,7 @@ void menuButtons()
       
         if(mousePressed)
       {
-        click.play();
-        click.rewind();
+        exitstate = true;
       }
 
     }
