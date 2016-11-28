@@ -17,6 +17,11 @@ boolean glove2on = false;
 boolean legson = false;
 boolean helmeton = false; 
 
+String glovedesc = "Omni-Tool:\nOmni-tools are multipurpose diagnostic and manufacturing tools as well as computers used for a variety of civilian and battlefield tasks, such as hacking, decryption, or repair. When activated, an omni-tool can appear over either of a person's forearms and/or hands, and occasionally both, as an orange hologram.";
+String legdesc = "Hahne-Kedar Greaves:\n Leg plating with auxiliary power cells that feed into weapons.";
+String helmdesc = "Terminus Helmet:\nLike all modern combat hard-helms, the Terminus Assault Helmet is environmentally sealed with an independent air supply for use in space and extreme planetary conditions, with an onboard micro-frame computer capable of running a suite of battle management software.";
+String chestdesc = "Kassa Aegis:\nKassa Fabrication's line of elite personal protection equipment includes a series of interlocking ceramic plates covered in a proprietary tungsten alloy weave for maximum stopping power.";
+
 
 void armorinit()
 {
@@ -78,6 +83,12 @@ void armorydisplay()
      if(mouseY <= (glove1[1] + glove1[3]) && mouseY >= (glove1[1]) && mouseX <= (glove1[0] + glove1[2]) && mouseX >= (glove1[0])) //Left Glove Button
     {
       glove1col = color(255,174,23,180);
+      strokeWeight(1);
+      stroke(0,0,0,180);
+      rect(width-454,height/8,350,700);
+      fill(255);
+      textSize(25);
+      text(glovedesc,width-450,height/8,350,700);
       
       if(mousePressed)
       {
@@ -102,6 +113,12 @@ void armorydisplay()
     if(mouseY <= (chest[1] + chest[3]) && mouseY >= (chest[1]) && mouseX <= (chest[0] + chest[2]) && mouseX >= (chest[0])) //Chest Button
     {
       chestcol = color(255,174,23,180);
+      strokeWeight(1);
+        stroke(0,0,0,180);
+        rect(width-454,height/8,350,700);
+        fill(255);
+        textSize(25);
+        text(chestdesc,width-450,height/8,350,700);
       
       if(mousePressed)
       {
@@ -126,6 +143,12 @@ void armorydisplay()
     if(mouseY <= (helmet[1] + helmet[3]) && mouseY >= (helmet[1]) && mouseX <= (helmet[0] + helmet[2]) && mouseX >= (helmet[0])) //Helmet Button
     {
       helmetcol = color(255,174,23,180);
+      strokeWeight(1);
+        stroke(0,0,0,180);
+        rect(width-454,height/8,350,700);
+        fill(255);
+        textSize(25);
+        text(helmdesc,width-450,height/8,350,700);
       
       if(mousePressed)
       {
@@ -150,6 +173,12 @@ void armorydisplay()
       if(mouseY <= (legs[1] + legs[3]) && mouseY >= (legs[1]) && mouseX <= (legs[0] + legs[2]) && mouseX >= (legs[0])) //Legs Button
     {
       legscol = color(255,174,23,180);
+      strokeWeight(1);
+        stroke(0,0,0,180);
+        rect(width-454,height/8,350,700);
+        fill(255);
+        textSize(25);
+        text(legdesc,width-450,height/8,350,700);
       
       if(mousePressed)
       {

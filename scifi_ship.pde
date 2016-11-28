@@ -9,12 +9,13 @@ void stars()
   {
     
     fill(0);
-    rect(width/4,270,width/2,810);
+    rect(width/4,270,width/2,610);
     
      if(stop == 0)
      {
        for(i = 0; i < 222; i++)
        {
+         noStroke();
          fill(255,255,255,random(20,255));
          ellipse(random(480,1440),random(270,810),random(1,5),random(1,5));
        }//end for loop 
