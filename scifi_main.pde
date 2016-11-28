@@ -64,6 +64,8 @@ void draw()
    planetdisplay();
    //Armor and Equipment Selection
    armorydisplay();
+   //Ship Diagnostics and Space Simulator
+   stars();
    
    fill(232,56,7,40);
    /*rect(0,0,1920,1080);*/
@@ -199,6 +201,13 @@ void menuButtons()
     {
       button3[4] = 1;
       button3col = color(255,174,23,220);
+      
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        menu = false;
+        shipdiag = true;
 
     }
     else
@@ -215,8 +224,6 @@ void menuButtons()
       {
         click.play();
         click.rewind();
-        menu = false;
-        shipdiag = true;
       }
 
     }
