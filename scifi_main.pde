@@ -1,6 +1,7 @@
 import processing.opengl.*; 
 import ddf.minim.*;
 PImage bg;
+PImage hologram;
 
 Minim minim;
 AudioPlayer theme;
@@ -9,14 +10,15 @@ AudioPlayer click;
 //Rotating Arc Variables
 int xCo = 960; //x coordinates
 int yCo = 540; //y coordinates
-int lar = 300; //width
-int alt = 300; // height
+int wid = 300; //width
+int high = 300; // height
 int ang = 1; // angle to start
 int ang2 = 1;
 int ang3 = 1;
 
 boolean menu = true;
 boolean planetinfo = false;
+boolean armoryscreen = false;
 
 String planettitle = "Planet Report";
 String armory = "Armory";
@@ -28,6 +30,7 @@ void setup()
 {
   size(1920,1080, P3D);
   bg = loadImage("illusive.jpg");
+  hologram = loadImage("hologram.png");
   smooth();
   
   minim = new Minim(this); //Looping the theme to play while the program is running
@@ -79,14 +82,14 @@ void draw()
    ang2 += 2;
    ang3 += 3;
   
-   arc(xCo,yCo,lar,alt, radians(ang), radians(ang+300));
-   arc(xCo,yCo,lar+30,alt+30, radians(-ang2), radians(-ang2+150));
-   arc(xCo,yCo,lar+60,alt+60, radians(ang3), radians(ang3+200));
-   arc(xCo,yCo,lar+200,alt+200, radians(-ang2), radians(-ang2+300));
-   arc(xCo,yCo,lar+220,alt+220, radians(ang), radians(ang+100));
-   arc(xCo,yCo,lar+250,alt+250, radians(-ang3), radians(-ang3+300));
-   arc(xCo,yCo,lar+500,alt+500, radians(ang), radians(ang+150));
-   arc(xCo,yCo,lar+510,alt+510, radians(-ang2), radians(-ang2+200));
+   arc(xCo,yCo,wid,high, radians(ang), radians(ang+300));
+   arc(xCo,yCo,wid+30,high+30, radians(-ang2), radians(-ang2+150));
+   arc(xCo,yCo,wid+60,high+60, radians(ang3), radians(ang3+200));
+   arc(xCo,yCo,wid+200,high+200, radians(-ang2), radians(-ang2+300));
+   arc(xCo,yCo,wid+220,high+220, radians(ang), radians(ang+100));
+   arc(xCo,yCo,wid+250,high+250, radians(-ang3), radians(-ang3+300));
+   arc(xCo,yCo,wid+500,high+500, radians(ang), radians(ang+150));
+   arc(xCo,yCo,wid+510,high+510, radians(-ang2), radians(-ang2+200));
    
    menuButtons();
    
@@ -131,13 +134,31 @@ void draw()
       }
      
      
-   }
-   else
+    }
+    else
     {
       backbuttoncol = color( 247,159,25,100);
     }
        
+    
+  }
+  
+  
+  if(armoryscreen == true) //Armory Screen
+  {
+      strokeWeight(3);
+      stroke(0,0,0,180);
+      fill(64,8,23,210);
+      rect(710,100,500,700);
+      image(hologram,820,200);
+      
+      
+    
+    
+    
   } 
+  
+
 }
 
 void menuButtons()
@@ -201,6 +222,15 @@ void menuButtons()
     {
       button2[4] = 1;
       button2col = color(255,174,23,220);
+      
+       if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        menu = false;
+        armoryscreen = true;
+      }
+      
     }
     else
     {
