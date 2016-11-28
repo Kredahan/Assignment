@@ -49,9 +49,7 @@ void armorinit()
  helmet[3] = 50; 
  helmet[4] = 0; 
 
-
- 
-}
+} //end function armorinit
 
 
 void armorydisplay()
@@ -143,7 +141,39 @@ void armorydisplay()
     {
      image(helm,helmet[0] - 27 ,helmet[1] - 15 ,100, 75); 
     }
-      
-  } 
+    
+      stroke(0,0,0, 120);
+     strokeWeight(5);
+   
+     fill(backbuttoncol);
+     rect(backbutton[0],backbutton[1],backbutton[2],backbutton[3]);
+     fill(0,0,0,200);
+     textSize(40);
+     text(back, 150, 965);
   
-}
+   if(mouseY <= (backbutton[1] + backbutton[3]) && mouseY >= (backbutton[1]) && mouseX <= (backbutton[0] + backbutton[2]) && mouseX >= (backbutton[0])) //Planet Button
+    {
+      backbutton[4] = 1;
+      backbuttoncol = color(255,174,23,220);
+      
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        menu = true;
+        armoryscreen = false;
+      } // end inner if
+     
+     
+    }// end outer if
+    else
+    {
+      backbuttoncol = color( 247,159,25,100);
+    } //end else
+      
+      
+ } //end if(armoryscreen)
+  
+    
+  
+}// end function armorydisplay
