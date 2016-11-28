@@ -4,6 +4,17 @@ int[] glove2 = new int[5];
 int[] legs = new int[5];
 int[] helmet = new int[5];
 
+color glove1col = color( 64,8,23,20);
+color glove2col = color( 247,159,25,120);
+color chestcol = color( 247,159,25,20);
+color legscol = color( 247,159,25,120);
+color helmetcol = color( 247,159,25,120);
+
+boolean cheston = false;
+boolean glove1on = false;
+boolean glove2on = false;
+boolean legson = false;
+boolean helmeton = false;
 
 void armorinit()
 {
@@ -54,11 +65,57 @@ void armorydisplay()
       image(hologram,820,200);
       
       noStroke();
-      fill(232,56,7,40);
-      rect(glove1[0],glove1[1],glove1[2],glove1[3]);
-      image(omni,glove1[0] + 3 ,glove1[1] - 45 ,60, 100);
-      
+      fill(glove1col);
+      rect(glove1[0],glove1[1],glove1[2],glove1[3]); 
+      fill(chestcol);
       rect(chest[0],chest[1],chest[2],chest[3]);
+      
+     if(mouseY <= (glove1[1] + glove1[3]) && mouseY >= (glove1[1]) && mouseX <= (glove1[0] + glove1[2]) && mouseX >= (glove1[0])) //Left Glove Button
+    {
+      glove1col = color(255,174,23,220);
+      
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        glove1on = true;
+        
+      }
+     
+    }
+    else
+    {
+      glove1col = color(64,8,23,20);
+    }
+    
+    if(glove1on == true)
+    {
+     image(omni,glove1[0] + 3 ,glove1[1] - 45 ,60, 100); 
+    }
+    
+    
+    if(mouseY <= (chest[1] + chest[3]) && mouseY >= (chest[1]) && mouseX <= (chest[0] + chest[2]) && mouseX >= (chest[0])) //Left Glove Button
+    {
+      chestcol = color(255,174,23,220);
+      
+      if(mousePressed)
+      {
+        click.play();
+        click.rewind();
+        cheston = true;
+        
+      }
+     
+    }
+    else
+    {
+      chestcol = color(64,8,23,20);
+    }
+    
+    if(cheston == true)
+    {
+      image(chestplate,chest[0] - 220,chest[1] - 90,370,370);
+    }
       
       
       
