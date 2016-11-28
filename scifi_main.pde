@@ -87,7 +87,15 @@ void draw()
    endShape(CLOSE); 
    
    //Rotating Arcs
-   stroke(255,174,23,120);
+   if(menu == true)
+   {
+     arccol = color(255,174,23,120);
+   }
+   else
+   {
+     arccol = color(255,174,23,30);
+   }
+   stroke(arccol);
    strokeWeight(10);
    noFill();
     

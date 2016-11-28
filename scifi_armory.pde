@@ -9,6 +9,7 @@ color glove2col = color( 247,159,25,120);
 color chestcol = color( 247,159,25,20);
 color legscol = color( 247,159,25,120);
 color helmetcol = color( 247,159,25,120);
+color arccol = color( 255,174,23,120);
 
 boolean cheston = false;
 boolean glove1on = false;
@@ -140,7 +141,7 @@ void armorydisplay()
     
     if(helmeton == true)
     {
-     image(helm,helmet[0] - 25 ,helmet[1] - 20 ,100, 100); 
+     image(helm,helmet[0] - 27 ,helmet[1] - 15 ,100, 75); 
     }
       
   } 
