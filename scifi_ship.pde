@@ -2,14 +2,24 @@
 int i;
 int stop = 0;
 
+String shipinfo = "The SSV Normandy SR-1 (Systems Alliance Space Vehicle Normandy Stealth Reconnaissance-1) was a Systems Alliance starship. She is a prototype deep scout frigate, first of the eponymous Normandy class, co-developed by the Alliance and the Turian Hierarchy with the sponsorship of the Citadel Council. Optimized for solo reconnaissance missions deep within unstable regions, using state-of-the-art stealth technology powered by an experimental drive core.";
+
 void stars()
 {
  
   if(shipdiag == true)
   {
-    
+    strokeWeight(2);
+    stroke(0,0,0,160);
+    fill(137,10,44,150);
+    rect(width-454,height/8,350,700);
+    fill(255);
+    textSize(24);
+    text(shipinfo,width-450,height/8,350,700);
+    strokeWeight(15);
+    stroke(0,0,0,150);
     fill(0);
-    rect(width/4,270,width/2,610);
+    rect(width/4,180,width/2,610);
     
      if(stop == 0)
      {
