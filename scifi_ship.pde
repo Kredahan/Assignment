@@ -20,6 +20,7 @@ void stars()
     stroke(0,0,0,150);
     fill(0);
     rect(width/4,180,width/2,610);
+    image(normandy,560,height/4,800,400);
     
      if(stop == 0)
      {

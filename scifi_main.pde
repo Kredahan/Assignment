@@ -6,6 +6,7 @@ PImage omni;
 PImage chestplate;
 PImage helm;
 PImage leg;
+PImage normandy;
 
 Minim minim;
 AudioPlayer theme;
@@ -42,6 +43,7 @@ void setup()
   chestplate = loadImage("chest.png");
   helm = loadImage("helmet.png");
   leg = loadImage("leg.png");
+  normandy = loadImage("normandy.png");
   smooth();
   
   minim = new Minim(this); //Looping the theme to play while the program is running
